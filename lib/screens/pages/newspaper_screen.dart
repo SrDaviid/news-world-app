@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../services/news_service.dart';
 
 class NewspaperScreen extends StatelessWidget {
   const NewspaperScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.grey,
-      body: Center(
-        child: Text('NEWSPAPER'),
-      ),
-    );
+    final newsService = Provider.of<NewsService>(context);
+    return const Scaffold();
   }
 }
