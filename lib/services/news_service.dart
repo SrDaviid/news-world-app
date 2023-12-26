@@ -4,8 +4,8 @@ import 'package:news_world_app/models/news_models.dart';
 import 'package:http/http.dart' as http;
 
 class NewsService extends ChangeNotifier {
-  final _NEWS_API = "https://newsapi.org/v2/";
-  final _API_KEY = Environment.newsAPIkey;
+  final _newsApi = "https://newsapi.org/v2/";
+  final _apiKey = Environment.newsAPIkey;
   List<Article> headlines = [];
 
   NewsService() {
@@ -14,7 +14,7 @@ class NewsService extends ChangeNotifier {
 
   getTopHeadlines() async {
     final url =
-        Uri.parse("$_NEWS_API/top-headlines?country=us&apiKey=$_API_KEY");
+        Uri.parse("$_newsApi/top-headlines?country=us&apiKey=$_apiKey");
 
     final resp = await http.get(url);
 
