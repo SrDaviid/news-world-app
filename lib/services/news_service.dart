@@ -9,7 +9,7 @@ class NewsService extends ChangeNotifier {
   List<Article> headlines = [];
 
   NewsService() {
-    this.getTopHeadlines();
+    getTopHeadlines();
   }
 
   getTopHeadlines() async {
@@ -19,8 +19,7 @@ class NewsService extends ChangeNotifier {
     final resp = await http.get(url);
 
     final newsResponse = newsResponseFromJson(resp.body);
-    this.headlines.addAll(newsResponse.articles);
-    print(newsResponse.articles[3].title);
+    headlines.addAll(newsResponse.articles);
     notifyListeners();
   }
 }
