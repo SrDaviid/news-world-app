@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HeaderNewsScreen extends StatelessWidget {
   static const name = 'headers-screen';
@@ -6,10 +7,14 @@ class HeaderNewsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.greenAccent,
-      body: Center(
-        child: Text('HEADERS'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Headers',
+          style: GoogleFonts.nunito(
+              fontWeight: FontWeight.w800, color: Colors.white, fontSize: 24),
+        ),
+        backgroundColor: Colors.indigo,
       ),
     );
   }
