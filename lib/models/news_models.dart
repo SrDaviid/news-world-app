@@ -57,9 +57,11 @@ class Article {
         source: Source.fromJson(json["source"]),
         author: json["author"],
         title: json["title"],
-        description: json["description"],
+        description: json["description"] ?? "",
         url: json["url"],
         urlToImage: json["urlToImage"],
+        // ??
+        //     "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg",
         publishedAt: DateTime.parse(json["publishedAt"]),
         content: json["content"],
       );
