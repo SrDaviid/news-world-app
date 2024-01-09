@@ -63,19 +63,29 @@ class ListNews extends StatelessWidget {
                           },
                         ),
                       ),
-                      //TODO: Colocarle un BorderShadow se que pueda ver el Text en fondo claro
                       Positioned(
                         top: 8,
                         left: 8,
-                        child: Text(
-                          DateFormat('yyyy-MM-dd').format(
-                            news[index].publishedAt,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              stops: [1, 1],
+                              colors: [Colors.black26, Colors.transparent],
+                            ),
+                            borderRadius: BorderRadius.circular(5),
                           ),
-                          style: GoogleFonts.nunito(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: Colors.white),
-                          textAlign: TextAlign.justify,
+                          child: Text(
+                            DateFormat('yyyy-MM-dd').format(
+                              news[index].publishedAt,
+                            ),
+                            style: GoogleFonts.nunito(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
                         ),
                       )
                     ],
